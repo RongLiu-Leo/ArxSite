@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ site.title }}</title>
+  {% if site.keywords %}
+    <meta name="keywords" content="{{ site.keywords }}">
+  {% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <link rel="icon" href="../icon.png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  <link rel="stylesheet" href="{{ '/assets/scripts/style.css' }}">
+  <link rel="stylesheet" href="{{ '/assets/scripts/dics.css' }}">
+  <script src="{{ '/assets/scripts/dics.js' }}"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script>
+    // Listen for DOM content to be loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      // Select all elements with the class 'b-dics'
+      var dicsContainers = document.querySelectorAll('.b-dics');
+      
+      // Loop through each container and instantiate Dics if available
+      dicsContainers.forEach(function(container) {
+        if (typeof Dics !== 'undefined') {
+          // Instantiate the slider by passing the container element
+          new Dics({
+              container: container,
+              hideTexts: false,
+              textPosition: "bottom"
+
+            });
+        } else {
+          console.error("Dics is not defined. Please ensure dics.js is included.");
+        }
+      });
+    });
+    </script>
+</head>
+<body>
+  <div class="title">
+    <h1>{{ site.title }}</h1>
+  </div>
+
+  <div class="authors is-size-5">
+    {% for author in site.authors %}
+      <a href="{{ author.url }}">{{ author.name }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="affiliations is-size-5">
+    {% for affiliation in site.affiliations %}
+      <a href="{{ affiliation.url }}">{{ affiliation.name }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="links">
+    {% for link in site.links %}
+      <span class="link-block">
+        <a href="{{ link.url }}" class="external-link button is-rounded">
+          <span class="icon">
+            {% assign lower_link_name = link.name | downcase %}
+            {% if lower_link_name contains "code" %}
+              <i class="fab fa-github"></i>
+            {% elsif lower_link_name contains "arxiv" %}
+              <i class="ai ai-arxiv"></i>
+            {% elsif lower_link_name contains "paper" %}
+              <i class="fas fa-file-pdf"></i>
+            {% elsif lower_link_name contains "data" %}
+              <i class="far fa-images"></i>
+            {% elsif lower_link_name contains "video" %}
+              <i class="fab fa-youtube"></i>
+            {% else %}
+              <i class="fas fa-link"></i>
+            {% endif %}
+          </span>
+          <span>{{ link.name }}</span>
+        </a>
+      </span>
+    {% endfor %}
+  </div>
+
+  <div class="teaser">
+    {% if site.teaser %}
+      {% assign ext = site.teaser | split: '.' | last | downcase %}
+      {% if ext == 'mp4' %}
+        <video controls autoplay muted loop>
+          <source src="{{ site.teaser }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      {% elsif ext == 'jpg' or ext == 'jpeg' or ext == 'png' or ext == 'gif' %}
+        <img src="{{ site.teaser }}" alt="Teaser Image">
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>{{ site.abstract }}</p>
+  </div>
+
+  <div class="sections">
+    {% for section in site.sections %}
+      <h2>{{ section.title }}</h2>
+      <p style="padding-bottom: 5px;">{{ section.description }}</p>
+      <div class="{% if section.media.size > 1 %}b-dics{% endif %}">
+        {% for item in section.media %}
+          {%- assign media_name = item.src | split: '/' | last -%}
+          {%- assign media_alt = item.alt | default: media_name | remove: '.png' | remove: '.jpg' | remove: '.jpeg' | remove: '.gif' | remove: '.mp4' -%}
+          {% if item.type == "image" %}
+            <img src="{{ item.src }}" alt="{{ media_alt }}">
+          {% elsif item.type == "video" %}
+            {% if section.media.size > 1 %}
+                  <video src="{{ item.src }}" loop muted alt="{{ media_alt }}">
+            {% else %}
+                  <video src="{{ item.src }}" controls alt="{{ media_alt }}">
+            {% endif %}
+              Your browser does not support the video tag.
+            </video>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="citation">
+    <h2>Citation</h2>
+    <pre><code class="language-bibtex">{{ site.bibtex }}</code></pre>
+  </div>
+
+  <div class="acknowledgments">
+    <h2>Acknowledgments</h2>
+    <p>
+      Welcome to ArxSite! We've set up the basic framework for your website, and now it's your turn to make it truly yours.
+      Simply head over to the <a href="../_config.yml">_config.yml</a> file and fill it in with details about your project.
+    </p>
+    <p>
+      If you find ArxSite useful, please kindly remember to include a link back to <a href="https://github.com/RongLiu-Leo/arxsite">arxsite project</a>.
+      Feel free to customize the HTML and CSS files however you like. Your unique style is welcome here, and contributions back to the repo are always appreciated!
+    </p>
+  </div>
+</body>
+</html>

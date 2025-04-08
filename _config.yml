@@ -1,0 +1,86 @@
+title: "Deformable Beta Splatting"
+
+# keywords: 
+
+authors:
+  - name: "Rong Liu"
+    url: ""
+  - name: "Dylan Sun"
+    url: ""
+  - name: "Meida Chen"
+    url: ""
+  - name: "Yue Wang"
+    url: ""
+  - name: "Andrew Feng"
+    url: ""
+
+affiliations:
+  - name: Affiliation1
+    url: ""
+  - name: Affiliation2
+    url: ""
+
+links:
+  - name: "arXiv"
+    url: "https://arxiv.org/abs/2501.18630"
+  - name: "Paper"
+    url: "https://arxiv.org/pdf/2501.18630.pdf"
+  - name: "Code"
+    url: ""
+  - name: "Video"
+    url: ""
+  - name: "Data"
+    url: ""
+
+teaser: teaser.png
+
+sections:
+  - title: Single Media Display
+    description: |
+      The current style supports a single media display.
+    media:
+      - type: "image"
+        src: "teaser.png"
+  - title: Multiple Media Comparison
+    description: |
+      It also supports multiple media displays for comparison.
+    media:
+      - type: "image"
+        src: "teaser.png"
+      - type: "image"
+        src: "teaser.png"
+      - type: "image"
+        src: "teaser.png"
+
+bibtex: |
+  @misc{liu2025deformablebetasplatting,
+        title={ Deformable Beta Splatting },
+        author={ Rong Liu and Dylan Sun and Meida Chen and Yue Wang and Andrew Feng },
+        year={ 2025 },
+        eprint={ 2501.18630 },
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={ https://arxiv.org/abs/2501.18630 }
+    }
+
+abstract: |
+  3D Gaussian Splatting (3DGS) has advanced radiance field reconstruction by
+  enabling real-time rendering. However, its reliance on Gaussian kernels for
+  geometry and low-order Spherical Harmonics (SH) for color encoding limits its
+  ability to capture complex geometries and diverse colors. We introduce
+  Deformable Beta Splatting (DBS), a deformable and compact approach that
+  enhances both geometry and color representation. DBS replaces Gaussian kernels
+  with deformable Beta Kernels, which offer bounded support and adaptive
+  frequency control to capture fine geometric details with higher fidelity while
+  achieving better memory efficiency. In addition, we extended the Beta Kernel to
+  color encoding, which facilitates improved representation of diffuse and
+  specular components, yielding superior results compared to SH-based methods.
+  Furthermore, Unlike prior densification techniques that depend on Gaussian
+  properties, we mathematically prove that adjusting regularized opacity alone
+  ensures distribution-preserved Markov chain Monte Carlo (MCMC), independent of
+  the splatting kernel type. Experimental results demonstrate that DBS achieves
+  state-of-the-art visual quality while utilizing only 45% of the parameters and
+  rendering 1.5x faster than 3DGS-based methods. Notably, for the first time,
+  splatting-based methods outperform state-of-the-art Neural Radiance Fields,
+  highlighting the superior performance and efficiency of DBS for real-time
+  radiance field rendering.
