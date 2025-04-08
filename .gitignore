@@ -1,0 +1,39 @@
+# Bytecode / cache
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Package build files
+build/
+dist/
+*.egg-info/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode and other IDE configs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Output folder for website
+website/
+
+# Compiled templates or temp data
+*.tmp
+*.log
+*.bak

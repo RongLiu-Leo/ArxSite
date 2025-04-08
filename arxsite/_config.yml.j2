@@ -1,0 +1,52 @@
+title: "{{ title }}"
+
+# keywords: 
+
+authors:{% for author in authors %}
+  - name: "{{ author.name }}"
+    url: ""
+{%- endfor %}
+
+affiliations:
+  - name: Affiliation1
+    url: ""
+  - name: Affiliation2
+    url: ""
+
+links:
+  - name: "arXiv"
+    url: "{{ arxiv_url }}"
+  - name: "Paper"
+    url: "{{ pdf_url }}"
+  - name: "Code"
+    url: ""
+  - name: "Video"
+    url: ""
+  - name: "Data"
+    url: ""
+
+teaser: teaser.png
+
+sections:
+  - title: Single Media Display
+    description: |
+      The current style supports a single media display.
+    media:
+      - type: "image"
+        src: "teaser.png"
+  - title: Multiple Media Comparison
+    description: |
+      It also supports multiple media displays for comparison.
+    media:
+      - type: "image"
+        src: "teaser.png"
+      - type: "image"
+        src: "teaser.png"
+      - type: "image"
+        src: "teaser.png"
+
+bibtex: |
+  {{ bibtex }}
+
+abstract: |
+  {{ abstract | indent(2) }}
