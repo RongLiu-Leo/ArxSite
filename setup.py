@@ -2,14 +2,14 @@ from setuptools import setup, find_packages
 
 setup(
     name="arxsite",
-    version="0.1.0",
+    version="0.2.0",
     description="Generate a Jekyll project website from an arXiv paper",
     author="Rong Liu",
     url="https://github.com/RongLiu-Leo/arxsite",
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        "arxsite": ["*"],
+        "arxsite": ["templates/*", "*"],
     },
     install_requires=[
         "requests",
