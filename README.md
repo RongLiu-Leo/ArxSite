@@ -53,10 +53,10 @@ Options:
 <details>
 <summary><strong>Click to view styles</strong></summary>
 
-### default
-A simple template rushed by [Rong](https://github.com/RongLiu-Leo).
+### 1. default
+A simple template, rushed by [Rong](https://github.com/RongLiu-Leo).
 
-### Your Style (Coming Soon?)
+### 2. Your Style (Coming Soon?)
 Your custom style is always welcome!
 Feel free to contribute your own template and tell us a fun fact about yourself, your theme, or your design process.
 </details>
@@ -65,6 +65,7 @@ Feel free to contribute your own template and tell us a fun fact about yourself,
 ## ⚡ Quick Guide
 <details>
 <summary><strong>Click to view guides</strong></summary>
+
 ### 1. Navigate to your GitHub project root folder
 ```bash
 cd <Your GitHub Project Root>
