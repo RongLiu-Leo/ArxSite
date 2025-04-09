@@ -20,17 +20,40 @@ def list_available_styles():
     ]
 
 
+def print_help():
+    print(
+        """📚 Usage: arxsite <arxiv_url> [--style <style_name>]
+
+        Options:
+        --style, -s        Choose a website style (default: default)
+        --help, -h         Show this help message and exit
+
+        Examples:
+        arxsite https://arxiv.org/abs/2501.18630
+        arxsite https://arxiv.org/abs/2501.18630 --style default
+
+        Available styles:
+        """
+        + ", ".join(list_available_styles())
+    )
+
+
 def main():
+    if any(arg in ("--help", "-h") for arg in sys.argv):
+        print_help()
+        sys.exit(0)
+
     if len(sys.argv) < 2 or len(sys.argv) > 4:
-        print("❌ Usage: arxsite <arxiv_url> [--style <style_name>]")
+        print("❌ Invalid arguments.")
+        print("Use --help for usage instructions.")
         sys.exit(1)
 
     arxiv_url = sys.argv[1]
 
-    style = "Rong"  # Default style
+    style = "default"  # Default style
     if len(sys.argv) == 4:
         if sys.argv[2] not in ["--style", "-s"]:
-            print("❌ Unknown option. Use --style or -s to specify style.")
+            print("❌ Unknown option. Use --help for usage instructions.")
             sys.exit(1)
         style = sys.argv[3]
 
