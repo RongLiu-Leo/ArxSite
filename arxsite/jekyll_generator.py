@@ -11,7 +11,7 @@ def generate_site(metadata, style):
 
     root = importlib.resources.files("arxsite")
 
-    env = Environment(loader=FileSystemLoader(root))
+    env = Environment(loader=FileSystemLoader(root / "templates" / style))
 
     # Make site folders
     os.makedirs(os.path.join(output_dir, "_layouts"), exist_ok=True)
