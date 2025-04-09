@@ -30,7 +30,6 @@
 - 🎨 Supports customizable themes
 - 📦 One-liner install and run
 
----
 
 ## 🚀 Installation
 Install ArxSite from PyPI:
@@ -38,7 +37,6 @@ Install ArxSite from PyPI:
 pip install arxsite
 ```
 
----
 
 ## 🛠️ Usage
 ```bash
@@ -49,7 +47,6 @@ Options:
   --help, -h      Show this help message and exit
 ```
 
----
 
 ## 🖼️ Available Website Styles
 
@@ -64,7 +61,6 @@ Your custom style is always welcome!
 Feel free to contribute your own template and tell us a fun fact about yourself, your theme, or your design process.
 </details>
 
----
 
 ## ⚡ Quick Guide
 <details>
@@ -116,10 +112,8 @@ https://<Your GitHub Username>.github.io/<Repo Name>/
 ✅ Example: [https://rongliu-leo.github.io/ArxSite/](https://rongliu-leo.github.io/ArxSite/)
 </details>
 
----
 
 ## 🙌 Contribute
 Have a cool idea or style in mind?  
 Pull requests are welcome! Help make ArxSite better for everyone.
 
----
