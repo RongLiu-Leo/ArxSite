@@ -1,4 +1,6 @@
-# ArxSite
+<p align="center">
+  <img src="arxsite/teaser.png" alt="ArxSite teaser" width="50%">
+</p>
 
 <p align="center">
   <a href="https://pypi.org/project/arxsite/">
@@ -13,12 +15,11 @@
   <a href="https://github.com/RongLiu-Leo/ArxSite/stargazers">
     <img alt="Stars" src="https://img.shields.io/github/stars/RongLiu-Leo/ArxSite?style=social">
   </a>
+
 </p>
 
-**Effortlessly turn any arXiv paper into a stylish GitHub Pages website.**
-
 <p align="center">
-  <img src="arxsite/teaser.png" alt="ArxSite teaser" width="80%">
+    Effortlessly turn any arXiv paper into a stylish GitHub Pages website.
 </p>
 
 ---
