@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="arxsite",
-    version="0.2.1",
+    version="0.2.2",
     description="Generate a Jekyll project website from an arXiv paper",
     author="Rong Liu",
     url="https://github.com/RongLiu-Leo/arxsite",

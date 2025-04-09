@@ -49,10 +49,6 @@ def generate_site(metadata, style):
                 os.path.join(output_dir, "assets/scripts", file.name),
             )
 
-    # .nojekyll file
-    with open(os.path.join(output_dir, ".nojekyll"), "w") as f:
-        f.write("")
-
     print(f"🌐 Jekyll site generated at: ./{output_dir}")
 
 
