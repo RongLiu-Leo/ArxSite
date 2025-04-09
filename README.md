@@ -1,5 +1,21 @@
 # ArxSite
-**Effortlessly turn any arXiv paper into a clean, professional GitHub Pages website.**
+
+<p align="center">
+  <a href="https://pypi.org/project/arxsite/">
+    <img alt="PyPI" src="https://img.shields.io/pypi/v/arxsite">
+  </a>
+  <a href="https://github.com/RongLiu-Leo/ArxSite/blob/main/LICENSE">
+    <img alt="License" src="https://img.shields.io/github/license/RongLiu-Leo/ArxSite">
+  </a>
+  <a href="https://github.com/RongLiu-Leo/ArxSite/pulls">
+    <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+  </a>
+  <a href="https://github.com/RongLiu-Leo/ArxSite/stargazers">
+    <img alt="Stars" src="https://img.shields.io/github/stars/RongLiu-Leo/ArxSite?style=social">
+  </a>
+</p>
+
+**Effortlessly turn any arXiv paper into a stylish GitHub Pages website.**
 
 <p align="center">
   <img src="arxsite/teaser.png" alt="ArxSite teaser" width="80%">
